@@ -1,0 +1,19 @@
+{
+    "name": "dominikpn/modelpresenter",
+    "description": "Presenter for laravel models",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominik Pondo",
+            "email": "dominikpondo@gmail.com"
+        }
+    ],
+    "require": {
+		"php" : ">=7.0"
+	},
+	"autoload": {
+        "psr-4": {
+            "dominikpn\\Presenter\\": "src/"
+        }
+    },
+}
