@@ -27,6 +27,7 @@ abstract class Presenter
                 return call_user_func_array($this->methodCasts[$name],$arguments);
             }
         }
+        return $this->defaultValue($name);
     }
 
     public function __get($name)
@@ -38,6 +39,12 @@ abstract class Presenter
                 return call_user_func_array($this->propertyCasts[$name],[$this]);
             }
         }
+        return $this->defaultValue($name);
+    }
+
+    protected function defaultValue(string $methodOrPropertyName)
+    {
+        return null;
     }
 
     private function checkIfPropertyExists(string $propertyName)
