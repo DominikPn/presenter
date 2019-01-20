@@ -7,7 +7,7 @@ namespace dominikpn\Presenter\Builder;
 use dominikpn\Presenter\Exceptions\PresenterNotDefined;
 use dominikpn\Presenter\Presenter;
 
-class Decorator
+class Builder
 {
     protected $presenter = null;
     protected $currentMethod = null;
