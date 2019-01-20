@@ -5,5 +5,5 @@ use dominikpn\Presenter\Presenter;
 
 Interface PresenterFactory
 {
-    public function create():Presenter;
+    public function create(string $class,$model = null):Presenter;
 }
