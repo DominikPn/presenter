@@ -5,16 +5,17 @@ namespace dominikpn\Presenter\Builder;
 
 
 use dominikpn\Presenter\Exceptions\PresenterNotDefined;
+use dominikpn\Presenter\Presenter;
 
-class Builder
+class Decorator
 {
     protected $presenter = null;
     protected $currentMethod = null;
     protected $currentProperty = null;
 
-    public function presenter(string $class, $model)
+    public function presenter(Presenter $presenter, $model)
     {
-        $this->presenter = new $class();
+        $this->presenter = $presenter;
         $this->presenter->setModel($model);
         return $this;
     }
