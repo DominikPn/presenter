@@ -5,6 +5,8 @@ namespace dominikpn\Presenter\Builder;
 
 
 use dominikpn\Presenter\Exceptions\PresenterNotDefined;
+use dominikpn\Presenter\Factory\PresenterFactory;
+use dominikpn\Presenter\Factory\StandardFactory;
 use dominikpn\Presenter\Presenter;
 
 class Builder
@@ -12,6 +14,22 @@ class Builder
     protected $presenter = null;
     protected $currentMethod = null;
     protected $currentProperty = null;
+
+    public function createFrom(string $class, PresenterFactory $factory = null)
+    {
+        if($factory == null) $factory = new StandardFactory();
+        $this->presenter = $factory->create($class);
+
+        return $this;
+    }
+
+    public function attachModel($model)
+    {
+        $this->validatePresenter();
+        $this->presenter->setModel($model);
+
+        return $this;
+    }
 
     public function presenter(Presenter $presenter)
     {
