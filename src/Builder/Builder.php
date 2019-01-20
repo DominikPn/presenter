@@ -12,9 +12,10 @@ class Builder
     protected $currentMethod = null;
     protected $currentProperty = null;
 
-    public function presenter(string $class)
+    public function presenter(string $class, $model)
     {
         $this->presenter = new $class();
+        $this->presenter->setModel($model);
         return $this;
     }
 
