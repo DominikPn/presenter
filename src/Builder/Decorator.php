@@ -13,10 +13,9 @@ class Decorator
     protected $currentMethod = null;
     protected $currentProperty = null;
 
-    public function presenter(Presenter $presenter, $model)
+    public function presenter(Presenter $presenter)
     {
         $this->presenter = $presenter;
-        $this->presenter->setModel($model);
         return $this;
     }
 
