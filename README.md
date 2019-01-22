@@ -1,4 +1,3 @@
-#Presenter
 <h1>Model presenter for Laravel</h1> 
 
 <p>Laravel model presenter with fluent decorator<p>
@@ -62,3 +61,25 @@ b) Attach presenter to model
     echo $decoratedPresenter->surname; //Print "Kowalski";
 ```
 
+<h2> Default presenter factory </h2>
+<p>Update default presenter factory for single model</p>
+
+```php
+    namespace App;
+    
+    use Illuminate\Database\Eloquent\Model;
+    use dominikpn\Presenter\Traits\Presentable;
+    use dominikpn\Presenter\Factories\ModelPresenterFactory;
+    
+    class User extends Model
+    {
+        use Presentable;
+        
+        protected $presenter = '\App\Presenters\UserPresenter';
+        
+        protected function presenterFactory():ModelPresenterFactory
+        {
+            return new YOURMODELPRESENTERFACTORY();
+        }
+    }
+```
