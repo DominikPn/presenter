@@ -2,8 +2,8 @@
 namespace dominikpn\Presenter\Traits;
 
 
-use dominikpn\Presenter\Factiories\FactoryProvider;
-use dominikpn\Presenter\Factiories\ModelPresenterFactory;
+use dominikpn\Presenter\Factories\FactoryProvider;
+use dominikpn\Presenter\Factories\ModelPresenterFactory;
 
 trait Presentable
 {

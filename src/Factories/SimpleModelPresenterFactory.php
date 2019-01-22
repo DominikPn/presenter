@@ -1,7 +1,7 @@
 <?php
 
 
-namespace dominikpn\Presenter\Factiories;
+namespace dominikpn\Presenter\Factories;
 
 
 class SimpleModelPresenterFactory implements ModelPresenterFactory
