@@ -6,5 +6,5 @@ namespace dominikpn\Presenter\Factiories;
 
 interface Factory
 {
-    public function create(string $class);
+    public function create(string $class, array $data = []);
 }
