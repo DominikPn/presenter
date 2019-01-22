@@ -8,6 +8,12 @@ abstract class ModelPresenter
     protected $model = null;
     protected $checkType = true;
 
+    public function __construct($model)
+    {
+        if($this->checkType && !$this->isValidType($model)) throw new InvalidModelType();
+        $this->model = $model;
+    }
+
     public function setModel($model)
     {
         if($this->checkType && !$this->isValidType($model)) throw new InvalidModelType();
