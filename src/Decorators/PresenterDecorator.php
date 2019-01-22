@@ -3,8 +3,6 @@ namespace dominikpn\Presenter\Decorators;
 
 
 use dominikpn\Presenter\Exceptions\PresenterNotDefined;
-use dominikpn\Presenter\Factory\PresenterFactory;
-use dominikpn\Presenter\Factory\StandardFactory;
 use dominikpn\Presenter\Presenter;
 
 class PresenterDecorator
@@ -51,11 +49,6 @@ class PresenterDecorator
         $this->validatePresenter();
 
         return $this->presenter;
-    }
-
-    protected function defaultFactory(): PresenterFactory
-    {
-        return new StandardFactory();
     }
 
     private function clearCurrentMethod()
