@@ -4,12 +4,7 @@
 namespace dominikpn\Presenter\Factiories;
 
 
-class ModelPresenterFactory implements Factory
+interface ModelPresenterFactory
 {
-    public function create(string $class, array $data = [])
-    {
-        if(isset($data['model']))
-            return new $class($data['model']);
-        return null;
-    }
+    public function create(string $class, $model, array $data = []);
 }
