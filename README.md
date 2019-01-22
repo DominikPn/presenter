@@ -21,9 +21,9 @@ a) Create presenter class
             return User::class;
         }
     }
- ```
+```
 b) Attach presenter to model
- ```php
+```php
     namespace App;
     
     use Illuminate\Database\Eloquent\Model;
@@ -35,7 +35,7 @@ b) Attach presenter to model
         
         protected $presenter = '\App\Presenters\UserPresenter';
     }
- ```  
+```  
  c) Now you can use your presenter
  ```php
      {{ $user->presentable()->name() }};
