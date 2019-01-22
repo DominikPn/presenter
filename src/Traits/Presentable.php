@@ -2,8 +2,8 @@
 namespace dominikpn\Presenter\Traits;
 
 
+use dominikpn\Presenter\Factiories\FactoryProvider;
 use dominikpn\Presenter\Factiories\ModelPresenterFactory;
-use dominikpn\Presenter\Factiories\SimpleModelPresenterFactory;
 
 trait Presentable
 {
@@ -21,6 +21,6 @@ trait Presentable
 
     protected function presenterFactory():ModelPresenterFactory
     {
-        return new SimpleModelPresenterFactory();
+        return FactoryProvider::getDefaultFactory();
     }
 }
