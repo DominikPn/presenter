@@ -6,13 +6,9 @@ use dominikpn\Presenter\Presenter;
 
 class StandardFactory implements PresenterFactory
 {
-    public function create(string $class,$model = null): Presenter
+    public function create(string $class): Presenter
     {
         $presenter = new $class();
-
-        if($model != null)
-            $presenter->setModel($model);
-
         return $presenter;
     }
 }
