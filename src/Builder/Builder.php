@@ -22,14 +22,7 @@ class Builder
 
         return $this;
     }
-
-    public function attachModel($model)
-    {
-        $this->validatePresenter();
-        $this->presenter->setModel($model);
-
-        return $this;
-    }
+    
 
     public function presenter(Presenter $presenter)
     {
