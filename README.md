@@ -43,22 +43,22 @@ b) Attach presenter to model
  c) Now you can use your presenter
  
 ```php
-     {{ $user->presentable()->name() }};
+    {{ $user->presentable()->name() }};
 ```  
 <h2>Presenter decorator</h2>
   
   How to use presenter decorator:
   
 ```php
-      $presenterDecorator = new \dominikpn\Presenter\Decorators\PresenterDecorator();
-      $userPresenter = $user->presenter();
-      $decoratedPresenter = $presenterDecorator->decorate($userPresenter)
-                                ->whenCall('displayHello')->give('Hello World!')
-                                ->whenGet('surname')->give(function (){
+    $presenterDecorator = new \dominikpn\Presenter\Decorators\PresenterDecorator();
+    $userPresenter = $user->presenter();
+    $decoratedPresenter = $presenterDecorator->decorate($userPresenter)
+                            ->whenCall('displayHello')->give('Hello World!')
+                               ->whenGet('surname')->give(function (){
                                     return 'Kowalski';
                                 })->get();
       
-      echo $decoratedPresenter->displayHello(); //Print "Hello World!";
-      echo $decoratedPresenter->surname; //Print "Kowalski";
+    echo $decoratedPresenter->displayHello(); //Print "Hello World!";
+    echo $decoratedPresenter->surname; //Print "Kowalski";
 ```
 
