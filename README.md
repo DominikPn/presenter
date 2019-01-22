@@ -22,6 +22,7 @@ a) Create presenter class
         }
     }
 ```
+
 b) Attach presenter to model
 ```php
     namespace App;
@@ -36,10 +37,12 @@ b) Attach presenter to model
         protected $presenter = '\App\Presenters\UserPresenter';
     }
 ```  
+
  c) Now you can use your presenter
- ```php
+ 
+```php
      {{ $user->presentable()->name() }};
-  ```  
+```  
 <h2>Presenter decorator</h2>
   
   How to use presenter decorator:
