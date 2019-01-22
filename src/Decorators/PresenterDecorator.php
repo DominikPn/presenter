@@ -1,13 +1,12 @@
 <?php
-namespace dominikpn\Presenter\Builder;
+namespace dominikpn\Presenter\Decorators;
 
 
 use dominikpn\Presenter\Exceptions\PresenterNotDefined;
 use dominikpn\Presenter\Factory\PresenterFactory;
 use dominikpn\Presenter\Factory\StandardFactory;
-use dominikpn\Presenter\Presenter;
 
-class Builder
+class PresenterDecorator
 {
     protected $presenter = null;
     protected $currentMethod = null;
