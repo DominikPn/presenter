@@ -20,9 +20,9 @@ abstract class ModelPresenter
         $this->model = $model;
     }
 
-    protected function isValidType($model)
+    private function isValidType($model)
     {
-        return $this->checkType && get_class($model) === $this->modelType();
+        return $this->checkType && is_subclass_of($model,$this->modelType());
     }
 
     abstract protected function modelType():string;
