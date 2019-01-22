@@ -7,7 +7,6 @@ use dominikpn\Presenter\Factories\ModelPresenterFactory;
 
 trait Presentable
 {
-    protected $presenter;
     protected $presenterInstance;
 
     public function presenter()
