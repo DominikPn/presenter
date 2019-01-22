@@ -6,7 +6,6 @@
 <h2>Example usage</h2>
 a) Create presenter class
 ```php
-    <?php
     namespace App\Presenters;
     
     use dominikpn\Presenter\ModelPresenter;
@@ -24,8 +23,7 @@ a) Create presenter class
     }
  ```
 b) Attach presenter to model
-```php
-    <?php
+ ```php
     namespace App;
     
     use Illuminate\Database\Eloquent\Model;
@@ -47,7 +45,6 @@ b) Attach presenter to model
   How to use presenter decorator:
   
 ```php
-      <?php
       $presenterDecorator = new \dominikpn\Presenter\Decorators\PresenterDecorator();
       $userPresenter = $user->presenter();
       $decoratedPresenter = $presenterDecorator->decorate($userPresenter)
