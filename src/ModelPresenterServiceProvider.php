@@ -6,8 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class ModelPresenterServiceProvider extends ServiceProvider
 {
-    protected $defer = true;
-
     public function boot()
     {
         $this->publishes([
