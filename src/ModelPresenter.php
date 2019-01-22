@@ -7,7 +7,7 @@ abstract class ModelPresenter
 {
     protected $model = null;
     protected $checkType = true;
-    
+
     public function setModel($model)
     {
         if($this->checkType && !$this->isValidType($model)) throw new InvalidModelType();
