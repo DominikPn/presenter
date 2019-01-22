@@ -15,7 +15,7 @@ class Builder
 
     public function createFrom(string $class, PresenterFactory $factory = null)
     {
-        if($factory == null) $factory = new StandardFactory();
+        if($factory == null) $factory = $this->defaultFactory();
         $this->presenter = $factory->create($class);
 
         return $this;
@@ -53,6 +53,11 @@ class Builder
         $this->validatePresenter();
 
         return $this->presenter;
+    }
+
+    protected function defaultFactory(): PresenterFactory
+    {
+        return new StandardFactory();
     }
 
     private function clearCurrentMethod()
