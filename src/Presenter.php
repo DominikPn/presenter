@@ -27,6 +27,7 @@ abstract class Presenter
                 array_unshift($arguments,$this);
                 return call_user_func_array($this->methodCasts[$name],$arguments);
             }
+            return $this->methodCasts[$name];
         }
         return $this->defaultValue($name);
     }
@@ -39,6 +40,7 @@ abstract class Presenter
             {
                 return call_user_func_array($this->propertyCasts[$name],[$this]);
             }
+            return $this->propertyCasts[$name];
         }
         return $this->defaultValue($name);
     }
