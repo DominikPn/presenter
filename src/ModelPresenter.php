@@ -3,7 +3,7 @@ namespace dominikpn\Presenter;
 
 use dominikpn\Presenter\Exceptions\InvalidModelType;
 
-abstract class ModelPresenter
+abstract class ModelPresenter extends Presenter
 {
     protected $model = null;
     protected $checkType = true;
