@@ -5,6 +5,7 @@
 
 <h2>Example usage</h2>
 a) Create presenter class
+
 ```php
     namespace App\Presenters;
     
@@ -24,6 +25,7 @@ a) Create presenter class
 ```
 
 b) Attach presenter to model
+
 ```php
     namespace App;
     
