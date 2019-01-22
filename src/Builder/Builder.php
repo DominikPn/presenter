@@ -1,6 +1,4 @@
 <?php
-
-
 namespace dominikpn\Presenter\Builder;
 
 
@@ -22,7 +20,6 @@ class Builder
 
         return $this;
     }
-    
 
     public function presenter(Presenter $presenter)
     {
