@@ -21,12 +21,6 @@ class Builder
         return $this;
     }
 
-    public function presenter(Presenter $presenter)
-    {
-        $this->presenter = $presenter;
-        return $this;
-    }
-
     public function whenCall(string $methodName)
     {
         $this->currentMethod = $methodName;
