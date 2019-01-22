@@ -5,6 +5,7 @@ namespace dominikpn\Presenter\Decorators;
 use dominikpn\Presenter\Exceptions\PresenterNotDefined;
 use dominikpn\Presenter\Factory\PresenterFactory;
 use dominikpn\Presenter\Factory\StandardFactory;
+use dominikpn\Presenter\Presenter;
 
 class PresenterDecorator
 {
@@ -12,11 +13,9 @@ class PresenterDecorator
     protected $currentMethod = null;
     protected $currentProperty = null;
 
-    public function createFrom(string $class, PresenterFactory $factory = null)
+    public function decorate(Presenter $presenter)
     {
-        if($factory == null) $factory = $this->defaultFactory();
-        $this->presenter = $factory->create($class);
-
+        $this->presenter = $presenter;
         return $this;
     }
 
