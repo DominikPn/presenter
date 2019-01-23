@@ -120,3 +120,32 @@ b) Modify defaultFactorty key value.
     'defaultFactory' => App\YourFactory::class
     ];
 ```
+
+<h2>Convert presenter to JSON</h2>
+
+```php
+    use dominikpn\Presenter\ModelPresenter;
+    
+    class ExampleModelPresenter extends ModelPresenter
+    {
+        public $UserName = 'John';
+        
+        /*
+            [
+                propertyOrMethodName => self::PROPERTY(default) or self::Method
+            ]
+        */
+        protected $toJson = [
+            'UserName',
+            'surname' => self::Method,
+        ];
+        
+        public function surname():string{
+            return 'Kowalski';
+        }
+    }
+```
+
+```php
+    echo $ExampleModelPresenter->toJson(); //print {"UserName":"John","surname":"Kowalski"}
+```
