@@ -2,7 +2,18 @@
 
 <p>Laravel model presenter with fluent decorator<p>
 
-<h2>Example usage</h2>
+<h2>Installation</h2>
+Add the service provider to the providers array in config/app.php:
+
+```php
+    'providers' => [
+        ...
+        dominikpn\Presenter\ModelPresenterServiceProvider::class
+    ];
+```
+
+<h2>Usage</h2>
+
 a) Create presenter class
 
 ```php
@@ -79,7 +90,33 @@ b) Attach presenter to model
         
         protected function presenterFactory():ModelPresenterFactory
         {
-            return new YOURMODELPRESENTERFACTORY();
+            return new YOURFACTORY();
         }
     }
+```
+
+<p>Update default presenter factory for all models</p>
+
+a) Publish config:
+php artisan vendor:publish --tag=config
+
+```php
+    namespace App;
+    
+    class YourFactory implements dominikpn\Presenter\Factories\ModelPresenterFactory
+    {
+            public function create(string $class,$model, array $data = [])
+            {
+                return new SomeModelPresenter($model);
+            }
+    }
+```
+
+b) Modify defaultFactorty key value.
+
+```php
+    <?php
+    return [
+    'defaultFactory' => App\YourFactory::class
+    ];
 ```
