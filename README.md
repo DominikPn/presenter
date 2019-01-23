@@ -3,7 +3,7 @@
 <p>Laravel model presenter with fluent decorator<p>
 
 <h2>Installation</h2>
-Add the service provider to the providers array in config/app.php:
+Add the service provider to the providers array in `config/app.php`:
 
 ```php
     'providers' => [
@@ -98,7 +98,7 @@ b) Attach presenter to model
 <p>Update default presenter factory for all models</p>
 
 a) Publish config:
-php artisan vendor:publish --tag=config
+`php artisan vendor:publish --tag=config`
 
 ```php
     namespace App;
