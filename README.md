@@ -3,7 +3,7 @@
 <p>Laravel model presenter with fluent decorator<p>
 
 <h2>Installation</h2>
-Add the service provider to the providers array in `config/app.php`:
+Add the service provider to the providers array in config/app.php:
 
 ```php
     'providers' => [
