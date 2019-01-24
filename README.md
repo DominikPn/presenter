@@ -72,7 +72,7 @@ b) Attach presenter to model
     echo $decoratedPresenter->surname; //Print "Kowalski";
 ```
 
-<h2> Default presenter factory </h2>
+<h2> Default presenter </h2>
 <p>Update default presenter factory for single model</p>
 
 ```php
@@ -119,6 +119,13 @@ b) Modify defaultFactorty key value.
     return [
     'defaultFactory' => App\YourFactory::class
     ];
+```
+
+<p>Change ModelPresenter when call presenter method</p>
+
+```php
+    <?php
+    $userPresenter = $User->presenter(UserPresenter::class);
 ```
 
 <h2>Convert presenter to JSON</h2>
