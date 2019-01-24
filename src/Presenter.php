@@ -1,12 +1,16 @@
 <?php
 namespace dominikpn\Presenter;
 
+use Illuminate\Contracts\Support\Jsonable;
 
-
-abstract class Presenter
+abstract class Presenter implements Jsonable
 {
+    CONST J_METHOD = 1;
+    CONST J_PROPERTY = 2;
+
     protected $methodCasts = [];
     protected $propertyCasts = [];
+    protected $toJson = [];
 
     public function addMethodCast(string $methodName, $bind)
     {
@@ -63,5 +67,27 @@ abstract class Presenter
     private function isFunction($check)
     {
         return is_callable($check);
+    }
+
+    public function toJson($options = 0)
+    {
+        $buffer = [];
+
+        foreach ($this->toJson as $name=>$type)
+        {
+            switch ($type)
+            {
+                case self::J_METHOD:
+                    $buffer[$name] = $this->$name();
+                    break;
+                case self::J_PROPERTY:
+                    $buffer[$name] = $this->$name;
+                    break;
+                default:
+                    $buffer[$name] = $this->$name;
+            }
+        }
+
+        return json_encode($buffer,$options);
     }
 }
