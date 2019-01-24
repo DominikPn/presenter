@@ -132,12 +132,12 @@ b) Modify defaultFactorty key value.
         
         /*
             [
-                propertyOrMethodName => self::PROPERTY(default) or self::Method
+                propertyOrMethodName => self::J_PROPERTY(default) or self::J_METHOD
             ]
         */
         protected $toJson = [
             'UserName',
-            'surname' => self::Method,
+            'surname' => self::J_METHOD,
         ];
         
         public function surname():string{
