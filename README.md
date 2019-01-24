@@ -3,7 +3,7 @@
 <p>Laravel model presenter with fluent decorator<p>
 
 <h2>Installation</h2>
-Add the service provider to the providers array in config/app.php:
+<p>Add the service provider to the providers array in config/app.php:</p>
 
 ```php
     'providers' => [
@@ -57,7 +57,7 @@ b) Attach presenter to model
 ```  
 <h2>Presenter decorator</h2>
   
-  How to use presenter decorator:
+  <p><b>How to use presenter decorator:</b></p>
   
 ```php
     $presenterDecorator = new \dominikpn\Presenter\Decorators\PresenterDecorator();
@@ -73,7 +73,7 @@ b) Attach presenter to model
 ```
 
 <h2> Default presenter </h2>
-<p>Update default presenter factory for single model</p>
+<p><b>Update default presenter factory for single model</b></p>
 
 ```php
     namespace App;
@@ -95,7 +95,7 @@ b) Attach presenter to model
     }
 ```
 
-<p>Update default presenter factory for all models</p>
+<p><b>Update default presenter factory for all models</b></p>
 
 a) Publish config:
 `php artisan vendor:publish --tag=config`
@@ -121,7 +121,7 @@ b) Modify defaultFactorty key value.
     ];
 ```
 
-<p>Change ModelPresenter when call presenter method</p>
+<p><b>Select presenter instantly</b></p>
 
 ```php
     <?php
