@@ -4,13 +4,18 @@ namespace dominikpn\Presenter\Traits;
 
 use dominikpn\Presenter\Factories\FactoryProvider;
 use dominikpn\Presenter\Factories\ModelPresenterFactory;
+use dominikpn\Presenter\ModelPresenter;
 
 trait Presentable
 {
     protected $presenterInstance;
 
-    public function presenter()
+    public function presenter(string $presenterClass = null)
     {
+        if($presenterClass != null){
+            $this->presenterInstance = $this->presenterFactory()->create($presenterClass,$this);
+            return $this->presenterInstance;
+        }
         if($this->presenterInstance == null){
             $this->presenterInstance = $this->presenterFactory()->create($this->presenter,$this);
             return $this->presenterInstance;
