@@ -13,8 +13,8 @@ trait Presentable
     public function presenter(string $presenterClass = null)
     {
         if($presenterClass != null){
-            $this->presenterInstance = $this->presenterFactory()->create($presenterClass,$this);
-            return $this->presenterInstance;
+            $presenter = $this->presenterFactory()->create($presenterClass,$this);
+            return $presenter;
         }
         if($this->presenterInstance == null){
             $this->presenterInstance = $this->presenterFactory()->create($this->presenter,$this);
